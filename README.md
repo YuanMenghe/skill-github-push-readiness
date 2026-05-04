@@ -15,10 +15,11 @@ Layout is standard: one directory per skill containing `SKILL.md` with YAML fron
 | **OpenAI Codex** | `~/.codex/skills/` (see Codex docs for OS paths) | [Codex Skills](https://developers.openai.com/codex/skills/) |
 | **OpenCode** | Follow OpenCode’s skills path (often project-level) | [OpenCode Skills](https://opencode.ai/docs/skills/) |
 
-**Windows quick copy (PowerShell)** — adjust `YOUR_GITHUB_USER` if you clone with HTTPS/SSH under another path:
+**Windows quick copy (PowerShell)** — clone first, then point `$src` at `skills\github-push-readiness` inside the clone:
 
 ```powershell
-$src = "D:\VSCode\skill-github-push-readiness\skills\github-push-readiness"
+# git clone https://github.com/YuanMenghe/skill-github-push-readiness.git
+$src = ".\skill-github-push-readiness\skills\github-push-readiness"
 # Cursor (user-wide)
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.cursor\skills\github-push-readiness" | Out-Null
 Copy-Item -Recurse -Force "$src\*" "$env:USERPROFILE\.cursor\skills\github-push-readiness\"
